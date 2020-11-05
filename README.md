@@ -13,13 +13,13 @@
 <br/>
 
 <details> 
-  <summary>:zap: My GitHub Stats</summary>
+  <summary>:zap:-Status Github</summary>
 
   <br />
   
-  [![ArzonCorp's github stats](https://github-readme-stats.vercel.app/api?username=ArzonOfficial&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
+  [![ArzonCorp's github stats](https://github-readme-stats.vercel.app/api?username=PandaOfficialQC&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
 
-  [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ArzonOfficial&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+  [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=PandaOfficialQC&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
   
 </details>
 
