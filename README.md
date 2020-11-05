@@ -1,8 +1,8 @@
 <h1>Salut<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">voici ma base Template by ---> PandaQC#9999</h1>
 
 <p>
-<a href=https://discord.gg/sU4gH2r target="blank"><img align="center" src=https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/discord.svg alt="Arzon coporation" height="20" width="20" /></a>
-<a href=https://www.twitch.tv/jlarzondz target="blank"><img align="center" src=https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitch.svg alt="Arzon" height="20" width="20" /></a> 
+<a href=https://discord.gg/ge6Q8GPMeA target="blank"><img align="center" src=https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/discord.svg alt="Arzon coporation" height="20" width="20" /></a>
+<a href=https://www.twitch.tv/pandaqc__ target="blank"><img align="center" src=https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitch.svg alt="Arzon" height="20" width="20" /></a> 
 </p>
 
 ### So:
@@ -13,7 +13,7 @@
 <br/>
 
 <details> 
-  <summary>:zap:-Status Github</summary>
+  <summary>:zap:###-Status Github</summary>
 
   <br />
   
@@ -24,7 +24,6 @@
 </details>
 
 ### Languages and tools
-
 <a href=https://discord.gg/G2Ff3et target="blank"><img align="center" src=https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png alt="tools Visual Studio Code" width="26" /></a>
 <a href=https://discord.gg/G2Ff3et target="blank"><img align="center" src=https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png alt="languages HTML5"  width="26" /></a>
 <a href=https://discord.gg/G2Ff3et target="blank"><img align="center" src=https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png alt="languages CSS3"  width="26" /></a>
