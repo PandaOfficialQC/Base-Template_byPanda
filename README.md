@@ -9,6 +9,8 @@
 Veuillez télécharger La Nouvelle Versions Artificats.
 https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/3143-22c6fd555acd54021118d964cf64843efa46010d/server.zip
 
+Rappel : Double-job
+
 📡 by ---> PandaQC#9999
 <br/>
 
