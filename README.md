@@ -5,10 +5,9 @@
 <a href=https://www.twitch.tv/pandaqc__ target="blank"><img align="center" src=https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitch.svg alt="Arzon" height="20" width="20" /></a> 
 </p>
 
-### Voici le lien mega pour télécharger ma base :
-
+###So:
 - 
-
+-
 <br/>
 
 <details> 
