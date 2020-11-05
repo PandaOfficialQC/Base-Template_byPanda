@@ -1,4 +1,4 @@
-<h1>Salut ! voici ma base Template by<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">---> PandaQC#9999</h1>
+<h1>Salut<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">!voici ma base Template by ---> PandaQC#9999</h1>
 
 <p>
 <a href=https://discord.gg/sU4gH2r target="blank"><img align="center" src=https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/discord.svg alt="Arzon coporation" height="20" width="20" /></a>
