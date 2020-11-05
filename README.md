@@ -13,7 +13,7 @@
 <br/>
 
 <details> 
-  <summary>:zap:###-Status Github</summary>
+  <summary>:zap:Status-Github</summary>
 
   <br />
   
