@@ -4,8 +4,6 @@
 <a href=https://discord.gg/ge6Q8GPMeA target="blank"><img align="center" src=https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/discord.svg alt="Arzon coporation" height="20" width="20" /></a>
 <a href=https://www.twitch.tv/pandaqc__ target="blank"><img align="center" src=https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitch.svg alt="Arzon" height="20" width="20" /></a> 
 </p>
-⚙️ Lien Mega : https://mega.nz/file/zj5xmAaJ#2jO3shbfCkSPXH-fA7gZhl4vQrWbQzspWpixy30hdF8
-
 Veuillez télécharger La Nouvelle Versions Artificats.
 https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/3143-22c6fd555acd54021118d964cf64843efa46010d/server.zip
 
