@@ -18,7 +18,7 @@ Rappel : Double-job
 
   <br />
   
-  ![PandaOfficialQC's github stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&theme=dark&show_icons=true)
+  ![PandaOfficialQC's github stats](https://github-readme-stats.vercel.app/api?username=PandaOfficialQC&theme=dark&show_icons=true)
 
 
   [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=PandaOfficialQC&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
