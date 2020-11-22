@@ -1,36 +1,63 @@
-<html>
-    <head>
-        <link href="keks.css" rel="stylesheet" type="text/css" />
-       
-    </head>
-    <body>
-            
-                    <!--
-        To change the video, change the video id (after the /embed/) to match the video id of your new video before the autoplay
-                    -->
-               
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ypsSd_4YHA8?autoplay=1&%3Fvq=hd720;controls=0;&amp;showinfo=0" frameborder="0" allow="autoplay" allowfullscreen=""></iframe>
-
-                <div class="top">
-                        
-  
-                    <h1 id="title"> 
-                       t
-                    </h1>
-
-
-                    <h2 id="link">
-                      s
-                    </h2>
-
-                <!--
-                    Loading dots by superdupersumus @ https://codepen.io/xwildeyes/pen/KpqVzN
-                -->
-                 <div id="bottom_nav">
-                    <p class="saving"><span></span><span></span><span>.</span></p>
-                   </div>
-                </div>   
-               </div>
-    </body>
-    <script src="config.js"></script>
+LOADING SCREEN MODIFIÉ BY PandaQC#9999
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8">
+    <title> 
+    MixLoadingScreen Youtube | B y P a n d a
+    </title>
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <meta content="" name="keywords">
+    <meta content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" name="viewport">
+    <link href="css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="css/style-dark.css" media="all" rel="stylesheet" type="text/css">
+    <link href="css/css.css" rel="stylesheet">
+    <link href="css/fontawesome-all.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="css/colors/yellow-2.css" media="screen" rel="stylesheet" title="yellow-2" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7CDosis:200,300,400,500,600,700,800%7COswald:300,400,700%7CMontserrat:400,700" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="film-grain"></div>
+    <div id="preloader">
+      <div id="preloader-status">
+        <div class="preloader-position preloader-effect">
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <div
+    class="hero-fullscreen hero-bg">
+      <div class="slide-YT hero-fullscreen">
+        <div class="slide bg-img-YT"></div>
+        <div id="videoContainment"></div><a class="player" data-property="{videoURL:'https://youtu.be/LIENMUSIQUE', mute:false, showControls:false, quality:'default', opacity:0.5, containment:'#videoContainment', optimizeDisplay:true, loop:true, startAt:0, autoPlay:true, showYTLogo:false, addRaster:false, realfullscreen:true}" id="bgndVideo"></a>
+      </div>
+      <div class="preload-content"></div>
+    </div>
+    </div>
+    <svg id="cursor" width="20" height="20">
+      <defs>
+        <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="white"></stop>
+          <stop offset="100%" stop-color="white"></stop>
+        </linearGradient>
+      </defs>
+      <circle r="07" cx="10" cy="10" fill="none"></circle>
+      <line x1="0" y1="0" x2="20" y2="20"></line>
+      <line x1="0" y1="20" x2="20" y2="0"></line>
+        <defs>
+          <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f2c061"></stop>
+            <stop offset="100%" stop-color="#da1b60"></stop>
+          </linearGradient>
+        </defs>
+        <circle r="07" cx="10" cy="10" fill="none"></circle>
+        <line x1="0" y1="0" x2="20" y2="20"></line>
+        <line x1="0" y1="20" x2="20" y2="0"></line>
+      </svg>
+    </script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="js/plugins.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
 </html>
