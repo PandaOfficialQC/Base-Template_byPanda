@@ -18,7 +18,8 @@ Rappel : Double-job
 
   <br />
   
-  [![ArzonCorp's github stats](https://github-readme-stats.vercel.app/api?username=PandaOfficialQC&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
+  ![PandaOfficialQC's github stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&theme=dark&show_icons=true)
+
 
   [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=PandaOfficialQC&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
   
