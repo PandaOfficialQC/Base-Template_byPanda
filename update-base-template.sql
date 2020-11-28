@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5ubuntu0.5
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Client :  localhost:3306
--- Généré le :  Jeu 26 Novembre 2020 à 20:56
--- Version du serveur :  5.7.32-0ubuntu0.18.04.1
--- Version de PHP :  7.2.24-0ubuntu0.18.04.7
+-- Hôte : 127.0.0.1
+-- Généré le : sam. 28 nov. 2020 à 16:57
+-- Version du serveur :  10.4.14-MariaDB
+-- Version de PHP : 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `s1042_Light-Land-by-Panda`
+-- Base de données : `NOM DE TA BASE DE DONNÉES`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +34,7 @@ CREATE TABLE `addon_account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Contenu de la table `addon_account`
+-- Déchargement des données de la table `addon_account`
 --
 
 INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
@@ -53,7 +54,7 @@ CREATE TABLE `addon_account_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Contenu de la table `addon_account_data`
+-- Déchargement des données de la table `addon_account_data`
 --
 
 INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
@@ -124,11 +125,11 @@ CREATE TABLE `datastore_data` (
   `id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL,
   `owner` varchar(40) DEFAULT NULL,
-  `data` longtext
+  `data` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Contenu de la table `datastore_data`
+-- Déchargement des données de la table `datastore_data`
 --
 
 INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
@@ -148,7 +149,7 @@ CREATE TABLE `fine_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Contenu de la table `fine_types`
+-- Déchargement des données de la table `fine_types`
 --
 
 INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
@@ -214,14 +215,14 @@ INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 CREATE TABLE `items` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) NOT NULL,
-  `limit` int(11) NOT NULL DEFAULT '-1',
-  `rare` int(11) NOT NULL DEFAULT '0',
-  `can_remove` int(11) NOT NULL DEFAULT '1',
+  `limit` int(11) NOT NULL DEFAULT -1,
+  `rare` int(11) NOT NULL DEFAULT 0,
+  `can_remove` int(11) NOT NULL DEFAULT 1,
   `weight` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Contenu de la table `items`
+-- Déchargement des données de la table `items`
 --
 
 INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`, `weight`) VALUES
@@ -254,12 +255,12 @@ INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`, `weight`) V
 CREATE TABLE `jobs` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) DEFAULT NULL,
-  `whitelisted` tinyint(1) NOT NULL DEFAULT '0',
-  `SecondaryJob` tinyint(1) NOT NULL DEFAULT '0'
+  `whitelisted` tinyint(1) NOT NULL DEFAULT 0,
+  `SecondaryJob` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Contenu de la table `jobs`
+-- Déchargement des données de la table `jobs`
 --
 
 INSERT INTO `jobs` (`name`, `label`, `whitelisted`, `SecondaryJob`) VALUES
@@ -291,7 +292,7 @@ CREATE TABLE `job_grades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Contenu de la table `job_grades`
+-- Déchargement des données de la table `job_grades`
 --
 
 INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
@@ -340,12 +341,12 @@ CREATE TABLE `users` (
   `license` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   `money` int(11) DEFAULT NULL,
   `name` varchar(50) COLLATE utf8mb4_bin DEFAULT '',
-  `skin` longtext COLLATE utf8mb4_bin,
+  `skin` longtext COLLATE utf8mb4_bin DEFAULT NULL,
   `job` varchar(50) COLLATE utf8mb4_bin DEFAULT 'unemployed',
-  `job_grade` int(11) DEFAULT '0',
+  `job_grade` int(11) DEFAULT 0,
   `job2` varchar(255) COLLATE utf8mb4_bin DEFAULT 'unemployed2',
-  `job2_grade` int(11) DEFAULT '0',
-  `loadout` longtext COLLATE utf8mb4_bin,
+  `job2_grade` int(11) DEFAULT 0,
+  `loadout` longtext COLLATE utf8mb4_bin DEFAULT NULL,
   `position` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   `bank` int(11) DEFAULT NULL,
   `permission_level` int(11) DEFAULT NULL,
@@ -357,6 +358,13 @@ CREATE TABLE `users` (
   `height` varchar(5) COLLATE utf8mb4_bin DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `job2`, `job2_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`) VALUES
+('steam:11000014172acdc', 'license:e20f025120f05ee1c88a58018aef10989300bbfc', 46045645, 'Panda (2)', '{\"glasses_2\":0,\"age_2\":0,\"chain_1\":0,\"decals_1\":0,\"arms_2\":0,\"makeup_2\":0,\"beard_4\":0,\"ears_1\":-1,\"beard_1\":0,\"skin\":0,\"blush_3\":0,\"torso_1\":0,\"bracelets_1\":-1,\"complexion_1\":0,\"bodyb_2\":0,\"sex\":0,\"helmet_2\":0,\"watches_2\":0,\"beard_2\":0,\"mask_2\":0,\"makeup_4\":0,\"lipstick_4\":0,\"pants_2\":0,\"chest_2\":0,\"sun_1\":0,\"hair_color_2\":0,\"lipstick_3\":0,\"hair_color_1\":0,\"eye_color\":0,\"mask_1\":0,\"blush_1\":0,\"decals_2\":0,\"bproof_1\":0,\"chain_2\":0,\"hair_2\":0,\"bodyb_1\":0,\"bproof_2\":0,\"chest_1\":0,\"complexion_2\":0,\"face\":0,\"shoes_1\":0,\"torso_2\":0,\"eyebrows_3\":0,\"bracelets_2\":0,\"lipstick_2\":0,\"moles_2\":0,\"watches_1\":-1,\"sun_2\":0,\"blemishes_1\":0,\"hair_1\":0,\"makeup_3\":0,\"ears_2\":0,\"beard_3\":0,\"blemishes_2\":0,\"glasses_1\":0,\"shoes_2\":0,\"pants_1\":0,\"makeup_1\":0,\"bags_2\":0,\"eyebrows_2\":0,\"chest_3\":0,\"blush_2\":0,\"tshirt_2\":0,\"tshirt_1\":0,\"age_1\":0,\"helmet_1\":-1,\"bags_1\":0,\"eyebrows_4\":0,\"eyebrows_1\":0,\"lipstick_1\":0,\"arms\":0,\"moles_1\":0}', 'police', 4, 'unemployed2', 0, '[]', '{\"y\":-832.9,\"z\":14.3,\"x\":-1096.9}', 400000, 0, 'superadmin', 'Kevin', 'Lopez', '10/01/1992', 'm', '195');
+
 -- --------------------------------------------------------
 
 --
@@ -367,11 +375,11 @@ CREATE TABLE `user_accounts` (
   `id` int(11) NOT NULL,
   `identifier` varchar(22) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `money` double NOT NULL DEFAULT '0'
+  `money` double NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Contenu de la table `user_accounts`
+-- Déchargement des données de la table `user_accounts`
 --
 
 INSERT INTO `user_accounts` (`id`, `identifier`, `name`, `money`) VALUES
@@ -404,7 +412,7 @@ CREATE TABLE `user_inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Contenu de la table `user_inventory`
+-- Déchargement des données de la table `user_inventory`
 --
 
 INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
@@ -444,35 +452,8 @@ CREATE TABLE `user_licenses` (
   `owner` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Structure de la table `user_mdt`
---
-
-CREATE TABLE `user_mdt` (
-  `id` int(11) NOT NULL,
-  `char_id` int(11) DEFAULT NULL,
-  `notes` varchar(255) DEFAULT NULL,
-  `mugshot_url` varchar(255) DEFAULT NULL,
-  `bail` bit(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `vehicle_mdt`
---
-
-CREATE TABLE `vehicle_mdt` (
-  `id` int(11) NOT NULL,
-  `plate` varchar(255) DEFAULT NULL,
-  `stolen` bit(1) DEFAULT b'0',
-  `notes` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Index pour les tables exportées
+-- Index pour les tables déchargées
 --
 
 --
@@ -591,19 +572,7 @@ ALTER TABLE `user_licenses`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `user_mdt`
---
-ALTER TABLE `user_mdt`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `vehicle_mdt`
---
-ALTER TABLE `vehicle_mdt`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
@@ -611,66 +580,68 @@ ALTER TABLE `vehicle_mdt`
 --
 ALTER TABLE `addon_account_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT pour la table `addon_inventory_items`
 --
 ALTER TABLE `addon_inventory_items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT pour la table `characters`
 --
 ALTER TABLE `characters`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT pour la table `datastore_data`
 --
 ALTER TABLE `datastore_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT pour la table `fine_types`
 --
 ALTER TABLE `fine_types`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+
 --
 -- AUTO_INCREMENT pour la table `job_grades`
 --
 ALTER TABLE `job_grades`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT pour la table `society_moneywash`
 --
 ALTER TABLE `society_moneywash`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT pour la table `user_accounts`
 --
 ALTER TABLE `user_accounts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT pour la table `user_convictions`
 --
 ALTER TABLE `user_convictions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT pour la table `user_inventory`
 --
 ALTER TABLE `user_inventory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT pour la table `user_licenses`
 --
 ALTER TABLE `user_licenses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `user_mdt`
---
-ALTER TABLE `user_mdt`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `vehicle_mdt`
---
-ALTER TABLE `vehicle_mdt`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
