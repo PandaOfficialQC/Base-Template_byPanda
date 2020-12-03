@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 4.6.6deb5ubuntu0.5
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : sam. 28 nov. 2020 à 16:57
--- Version du serveur :  10.4.14-MariaDB
--- Version de PHP : 7.4.11
+-- Client :  localhost:3306
+-- Généré le :  Jeu 03 Décembre 2020 à 11:36
+-- Version du serveur :  5.7.32-0ubuntu0.18.04.1
+-- Version de PHP :  7.2.24-0ubuntu0.18.04.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -18,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `NOM DE TA BASE DE DONNÉES`
+-- Base de données :  `s1042_City-Land`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +33,7 @@ CREATE TABLE `addon_account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `addon_account`
+-- Contenu de la table `addon_account`
 --
 
 INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
@@ -54,12 +53,11 @@ CREATE TABLE `addon_account_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `addon_account_data`
+-- Contenu de la table `addon_account_data`
 --
 
 INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
-(1, 'caution', 0, 'steam:11000014172acdc'),
-(2, 'society_police', 0, NULL);
+(1, 'caution', 0, 'steam:11000014172acdc');
 
 -- --------------------------------------------------------
 
@@ -125,86 +123,8 @@ CREATE TABLE `datastore_data` (
   `id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL,
   `owner` varchar(40) DEFAULT NULL,
-  `data` longtext DEFAULT NULL
+  `data` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `datastore_data`
---
-
-INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
-(1, 'society_police', NULL, '{}');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `fine_types`
---
-
-CREATE TABLE `fine_types` (
-  `id` int(11) NOT NULL,
-  `label` varchar(255) DEFAULT NULL,
-  `amount` int(11) DEFAULT NULL,
-  `category` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `fine_types`
---
-
-INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
-(1, 'Usage abusif du klaxon', 30, 0),
-(2, 'Franchir une ligne continue', 40, 0),
-(3, 'Circulation à contresens', 250, 0),
-(4, 'Demi-tour non autorisé', 250, 0),
-(5, 'Circulation hors-route', 170, 0),
-(6, 'Non-respect des distances de sécurité', 30, 0),
-(7, 'Arrêt dangereux / interdit', 150, 0),
-(8, 'Stationnement gênant / interdit', 70, 0),
-(9, 'Non respect  de la priorité à droite', 70, 0),
-(10, 'Non-respect à un véhicule prioritaire', 90, 0),
-(11, 'Non-respect d\'un stop', 105, 0),
-(12, 'Non-respect d\'un feu rouge', 130, 0),
-(13, 'Dépassement dangereux', 100, 0),
-(14, 'Véhicule non en état', 100, 0),
-(15, 'Conduite sans permis', 1500, 0),
-(16, 'Délit de fuite', 800, 0),
-(17, 'Excès de vitesse < 5 kmh', 90, 0),
-(18, 'Excès de vitesse 5-15 kmh', 120, 0),
-(19, 'Excès de vitesse 15-30 kmh', 180, 0),
-(20, 'Excès de vitesse > 30 kmh', 300, 0),
-(21, 'Entrave de la circulation', 110, 1),
-(22, 'Dégradation de la voie publique', 90, 1),
-(23, 'Trouble à l\'ordre publique', 90, 1),
-(24, 'Entrave opération de police', 130, 1),
-(25, 'Insulte envers / entre civils', 75, 1),
-(26, 'Outrage à agent de police', 110, 1),
-(27, 'Menace verbale ou intimidation envers civil', 90, 1),
-(28, 'Menace verbale ou intimidation envers policier', 150, 1),
-(29, 'Manifestation illégale', 250, 1),
-(30, 'Tentative de corruption', 1500, 1),
-(31, 'Arme blanche sortie en ville', 120, 2),
-(32, 'Arme léthale sortie en ville', 300, 2),
-(33, 'Port d\'arme non autorisé (défaut de license)', 600, 2),
-(34, 'Port d\'arme illégal', 700, 2),
-(35, 'Pris en flag lockpick', 300, 2),
-(36, 'Vol de voiture', 1800, 2),
-(37, 'Vente de drogue', 1500, 2),
-(38, 'Fabriquation de drogue', 1500, 2),
-(39, 'Possession de drogue', 650, 2),
-(40, 'Prise d\'ôtage civil', 1500, 2),
-(41, 'Prise d\'ôtage agent de l\'état', 2000, 2),
-(42, 'Braquage particulier', 650, 2),
-(43, 'Braquage magasin', 650, 2),
-(44, 'Braquage de banque', 1500, 2),
-(45, 'Tir sur civil', 2000, 3),
-(46, 'Tir sur agent de l\'état', 2500, 3),
-(47, 'Tentative de meurtre sur civil', 3000, 3),
-(48, 'Tentative de meurtre sur agent de l\'état', 5000, 3),
-(49, 'Meurtre sur civil', 10000, 3),
-(50, 'Meurte sur agent de l\'état', 30000, 3),
-(51, 'Meurtre involontaire', 1800, 3),
-(52, 'Escroquerie à l\'entreprise', 2000, 2);
 
 -- --------------------------------------------------------
 
@@ -215,14 +135,14 @@ INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 CREATE TABLE `items` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) NOT NULL,
-  `limit` int(11) NOT NULL DEFAULT -1,
-  `rare` int(11) NOT NULL DEFAULT 0,
-  `can_remove` int(11) NOT NULL DEFAULT 1,
+  `limit` int(11) NOT NULL DEFAULT '-1',
+  `rare` int(11) NOT NULL DEFAULT '0',
+  `can_remove` int(11) NOT NULL DEFAULT '1',
   `weight` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `items`
+-- Contenu de la table `items`
 --
 
 INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`, `weight`) VALUES
@@ -255,12 +175,12 @@ INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`, `weight`) V
 CREATE TABLE `jobs` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) DEFAULT NULL,
-  `whitelisted` tinyint(1) NOT NULL DEFAULT 0,
-  `SecondaryJob` tinyint(1) NOT NULL DEFAULT 0
+  `whitelisted` tinyint(1) NOT NULL DEFAULT '0',
+  `SecondaryJob` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `jobs`
+-- Contenu de la table `jobs`
 --
 
 INSERT INTO `jobs` (`name`, `label`, `whitelisted`, `SecondaryJob`) VALUES
@@ -292,7 +212,7 @@ CREATE TABLE `job_grades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `job_grades`
+-- Contenu de la table `job_grades`
 --
 
 INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
@@ -341,12 +261,12 @@ CREATE TABLE `users` (
   `license` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   `money` int(11) DEFAULT NULL,
   `name` varchar(50) COLLATE utf8mb4_bin DEFAULT '',
-  `skin` longtext COLLATE utf8mb4_bin DEFAULT NULL,
+  `skin` longtext COLLATE utf8mb4_bin,
   `job` varchar(50) COLLATE utf8mb4_bin DEFAULT 'unemployed',
-  `job_grade` int(11) DEFAULT 0,
+  `job_grade` int(11) DEFAULT '0',
   `job2` varchar(255) COLLATE utf8mb4_bin DEFAULT 'unemployed2',
-  `job2_grade` int(11) DEFAULT 0,
-  `loadout` longtext COLLATE utf8mb4_bin DEFAULT NULL,
+  `job2_grade` int(11) DEFAULT '0',
+  `loadout` longtext COLLATE utf8mb4_bin,
   `position` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   `bank` int(11) DEFAULT NULL,
   `permission_level` int(11) DEFAULT NULL,
@@ -358,13 +278,6 @@ CREATE TABLE `users` (
   `height` varchar(5) COLLATE utf8mb4_bin DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
---
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `job2`, `job2_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`) VALUES
-('steam:11000014172acdc', 'license:e20f025120f05ee1c88a58018aef10989300bbfc', 46045645, 'Panda (2)', '{\"glasses_2\":0,\"age_2\":0,\"chain_1\":0,\"decals_1\":0,\"arms_2\":0,\"makeup_2\":0,\"beard_4\":0,\"ears_1\":-1,\"beard_1\":0,\"skin\":0,\"blush_3\":0,\"torso_1\":0,\"bracelets_1\":-1,\"complexion_1\":0,\"bodyb_2\":0,\"sex\":0,\"helmet_2\":0,\"watches_2\":0,\"beard_2\":0,\"mask_2\":0,\"makeup_4\":0,\"lipstick_4\":0,\"pants_2\":0,\"chest_2\":0,\"sun_1\":0,\"hair_color_2\":0,\"lipstick_3\":0,\"hair_color_1\":0,\"eye_color\":0,\"mask_1\":0,\"blush_1\":0,\"decals_2\":0,\"bproof_1\":0,\"chain_2\":0,\"hair_2\":0,\"bodyb_1\":0,\"bproof_2\":0,\"chest_1\":0,\"complexion_2\":0,\"face\":0,\"shoes_1\":0,\"torso_2\":0,\"eyebrows_3\":0,\"bracelets_2\":0,\"lipstick_2\":0,\"moles_2\":0,\"watches_1\":-1,\"sun_2\":0,\"blemishes_1\":0,\"hair_1\":0,\"makeup_3\":0,\"ears_2\":0,\"beard_3\":0,\"blemishes_2\":0,\"glasses_1\":0,\"shoes_2\":0,\"pants_1\":0,\"makeup_1\":0,\"bags_2\":0,\"eyebrows_2\":0,\"chest_3\":0,\"blush_2\":0,\"tshirt_2\":0,\"tshirt_1\":0,\"age_1\":0,\"helmet_1\":-1,\"bags_1\":0,\"eyebrows_4\":0,\"eyebrows_1\":0,\"lipstick_1\":0,\"arms\":0,\"moles_1\":0}', 'police', 4, 'unemployed2', 0, '[]', '{\"y\":-832.9,\"z\":14.3,\"x\":-1096.9}', 400000, 0, 'superadmin', 'Kevin', 'Lopez', '10/01/1992', 'm', '195');
-
 -- --------------------------------------------------------
 
 --
@@ -375,11 +288,11 @@ CREATE TABLE `user_accounts` (
   `id` int(11) NOT NULL,
   `identifier` varchar(22) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `money` double NOT NULL DEFAULT 0
+  `money` double NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `user_accounts`
+-- Contenu de la table `user_accounts`
 --
 
 INSERT INTO `user_accounts` (`id`, `identifier`, `name`, `money`) VALUES
@@ -412,7 +325,7 @@ CREATE TABLE `user_inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `user_inventory`
+-- Contenu de la table `user_inventory`
 --
 
 INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
@@ -453,7 +366,7 @@ CREATE TABLE `user_licenses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
 
 --
@@ -504,12 +417,6 @@ ALTER TABLE `datastore_data`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   ADD KEY `index_datastore_data_name` (`name`);
-
---
--- Index pour la table `fine_types`
---
-ALTER TABLE `fine_types`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `items`
@@ -572,7 +479,7 @@ ALTER TABLE `user_licenses`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
@@ -580,68 +487,51 @@ ALTER TABLE `user_licenses`
 --
 ALTER TABLE `addon_account_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT pour la table `addon_inventory_items`
 --
 ALTER TABLE `addon_inventory_items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `characters`
 --
 ALTER TABLE `characters`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `datastore_data`
 --
 ALTER TABLE `datastore_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT pour la table `fine_types`
---
-ALTER TABLE `fine_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
-
 --
 -- AUTO_INCREMENT pour la table `job_grades`
 --
 ALTER TABLE `job_grades`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 --
 -- AUTO_INCREMENT pour la table `society_moneywash`
 --
 ALTER TABLE `society_moneywash`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `user_accounts`
 --
 ALTER TABLE `user_accounts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT pour la table `user_convictions`
 --
 ALTER TABLE `user_convictions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `user_inventory`
 --
 ALTER TABLE `user_inventory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
 --
 -- AUTO_INCREMENT pour la table `user_licenses`
 --
 ALTER TABLE `user_licenses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
