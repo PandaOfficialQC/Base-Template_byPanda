@@ -9,7 +9,7 @@ https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/3143-22c6f
 
 Rappel : Double-job
 
-📡 by ---> PandaQC#9999
+📡 by ---> LykosV2
 <br/>
 
 
